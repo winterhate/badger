@@ -1,0 +1,21 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ dockerbuild ]
+  pull_request:
+    branches: [ dockerbuild ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install compilers
+      run: sudo apt-get update -y && apt-get install -y nim gcc-avr avr-libc
+    
+    - name: Compile
+      run: make build
