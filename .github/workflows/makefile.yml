@@ -16,7 +16,7 @@ jobs:
     
     - name: Install compilers
       run: |
-        curl https://nim-lang.org/choosenim/init.sh -sSf | sudo sh
+        curl https://nim-lang.org/choosenim/init.sh -sSfy | sudo sh
         sudo apt-get update -y
         sudo apt-get install -y gcc-avr avr-libc
     
