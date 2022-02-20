@@ -3,7 +3,7 @@ TARGET=./target
 $(TARGET)/badger: badger.nim nim.cfg panicoverride.nim teensy.nim keyboard.nim pgmspace.nim \
 			layouts.nim mappings/dvorak.nim mappings/qwerty.nim mcp23017.nim
 	mkdir -p $(TARGET)
-	nim c -d:danger --opt:size --os:any badger
+	nim c -d:danger --opt:size --os:standalone badger
 	mv badger $(TARGET)
 
 $(TARGET)/badger.hex: $(TARGET)/badger
