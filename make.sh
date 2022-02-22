@@ -1,2 +1,2 @@
 #!/bin/sh
-docker run -it -v $(pwd):/root/devel winterhate/nim-avr-devel make "$@"
+docker run --rm -v $(pwd):/home/user/project winterhate/nim-avr-devel make "$@"
